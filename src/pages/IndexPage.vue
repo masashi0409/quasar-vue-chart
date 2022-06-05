@@ -6,17 +6,22 @@
       :todos="todos"
       :meta="meta"
     ></example-component>
+    <my-hello name="shimano" />
   </q-page>
 </template>
 
 <script lang="ts">
 import { Todo, Meta } from 'components/models';
 import ExampleComponent from 'components/ExampleComponent.vue';
+import MyHello from 'components/MyHello.vue';
 import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'IndexPage',
-  components: { ExampleComponent },
+  components: {
+    ExampleComponent,
+    MyHello
+  },
   setup () {
     const todos = ref<Todo[]>([
       {
